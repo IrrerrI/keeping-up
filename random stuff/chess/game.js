@@ -15,8 +15,6 @@ for (let i = 0; i < 64; i++) {
     const square = document.createElement('div');
     const col = 1 + (i % 8);
     const row = 8 - Math.floor(i / 8);
-    
-    // Add data attributes for col and row
     square.dataset.col = col;
     square.dataset.row = row;
     
@@ -30,7 +28,6 @@ for (let i = 0; i < 64; i++) {
     }
     
     square.addEventListener('click', () => {
-        console.log('Square clicked:', square.id);
         // Log the coordinates for testing
         console.log('Position:', {
             col: parseInt(square.dataset.col),
