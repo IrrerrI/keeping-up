@@ -90,7 +90,14 @@ checkValid = (piece, from, to, board) => {
 }
     
 
-
+hasPiece = (square) => {
+    if (!square.innerHTML('')) {
+        return true;
+    }
+    else {
+        return false;
+    }  
+}
 
 
 checkPathClear = (from, to, board) => {

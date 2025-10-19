@@ -1,5 +1,13 @@
 const board = document.querySelector('.board');
 const getColLetter = (col) => String.fromCharCode(96 + col);
+const startState = ['r','n','b','q','k','b','n','r',
+                    'p','p','p','p','p','p','p','p',
+                    '','','','','','','','', '',
+                    '','','','','','','','', '',
+                    '','','','','','','','', '',
+                    '','','','','','','','', '',
+                    'P','P','P','P','P','P','P','P',
+                    'R','N','B','Q','K','B','N','R'];
 
 
 
