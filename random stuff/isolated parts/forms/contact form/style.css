@@ -1,0 +1,145 @@
+
+@font-face {
+  font-family: "Karla";
+  src: url("assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+}
+
+
+:root{
+    --primary: oklch(0.9 0.17 100);
+    --bg: oklch(0.1 0 264);
+    --bg-level-one: oklch(0.15 0 264);
+    --bg-level-two: oklch(0.2 0 264);
+    --bg-level-three: oklch(0.3 0 264);
+
+    --shadow-engraved: 
+    inset 0 4px 2px oklch(0.1 0 264), 
+    0 1px 2px #00000030,
+    0 2px 0px var(--bg-level-three);
+    --shadow-raised: 
+    inset 0 1px 2px #ffffff50,
+    0 4px 4px #00000030,
+    0 8px 8px var(--bg-level-one);
+
+    --font: "Karla", sans-serif;
+
+        --text: oklch(0.96 0 264);
+    --text-muted: oklch(0.76 0 264);
+    
+    --text: oklch(0.96 0 294);
+    --text-muted: oklch(0.76 0 294);
+    --highlight: oklch(0.5 0 294);
+    --border: oklch(0.4 0 294);
+    --border-muted: oklch(0.3 0 294);
+    --primary: oklch(0.76 0.1 294);
+    --secondary: oklch(0.76 0.1 114);
+    --danger: oklch(0.7 0.05 30);
+    --warning: oklch(0.7 0.05 100);
+    --success: oklch(0.7 0.05 160);
+    --info: oklch(0.7 0.05 260);
+
+}
+
+@layer topology {
+   .one{
+        background-color: var(--bg-level-one);
+        box-shadow: var(--shadow-engraved);
+    }
+
+    .two{
+        background-color: var(--bg-level-two);
+        box-shadow: var(--shadow-raised);
+    }
+
+    .three{
+        background-color: var(--bg-level-three);
+        box-shadow: var(--shadow-raised);
+    }
+
+ }
+
+@layer reset {
+    *, ::after, ::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: var(--font);
+    }
+}
+
+@layer utils {
+    .span-all{
+        grid-column: 1 / -1;
+    }
+}
+
+form{
+    gap: 1rem;
+    max-inline-size: 500px;
+    min-inline-size: 235px;
+    margin-inline: auto;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    container-type: inline-size;
+}
+
+@layer grid {
+form{
+     display: grid;
+       @media (width >= 500px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+}
+
+
+
+
+.form-group{
+    display: grid;
+    gap: 0.25rem;
+}
+
+/* Style all inputs and textareas except fieldset, radio, and checkbox */
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+    font: inherit;
+    color: inherit;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
+/* Style buttons: font, color, border-radius, padding only */
+button {
+    font: inherit;
+    color: inherit;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    border: none;
+}
+
+fieldset{
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group:has([type="radio"], [type="checkbox"]) {
+    display: flex;
+    gap: 1ch;
+  }
+
+input[type="radio"], input[type="checkbox"] {
+    width: 1.75cap;
+  }
