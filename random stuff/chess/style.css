@@ -29,3 +29,8 @@
 .light-square {
     background-color: #eeeed2;
 }
+
+#console {
+    align-self: center;
+    text-align: center;
+}

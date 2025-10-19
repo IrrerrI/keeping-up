@@ -143,56 +143,69 @@ checkForCheck = (from, to, board) => {
     return allValidMoves.includes(to.square.id);
 }
 
-
-
-// RANDOM TESTS AI
-
-const calculateRookMoves = (rook, currentSquare, board) => {
-    rook.validMoves = []; // Clear previous valid moves
-    const directions = [
-        { col: 0, row: 1 },  // up
-        { col: 0, row: -1 }, // down
-        { col: 1, row: 0 },  // right
-        { col: -1, row: 0 }  // left
-    ];
-
-    directions.forEach(dir => {
-        let newCol = currentSquare.col;
-        let newRow = currentSquare.row;
-
-        // Keep moving in the current direction until we hit a boundary or piece
-        while (true) {
-            newCol += dir.col;
-            newRow += dir.row;
-
-            // Check if we're still on the board (assuming 8x8 board)
-            if (newCol < 0 || newCol > 7 || newRow < 0 || newRow > 7) {
-                break;
-            }
-
-            const square = board[newCol][newRow];
-            // If square is empty, it's a valid move
-            if (!square.hasPiece) {
-                rook.validMoves.push(square.id);
-            }
-            // If square has an enemy piece, it's a valid move but we can't move further
-            else if (square.piece.color !== rook.color) {
-                rook.validMoves.push(square.id);
-                break;
-            }
-            // If square has a friendly piece, we can't move here or beyond
-            else {
-                break;
-            }
-        }
-    });
+const getColor = (square) => {  
+    if (square.row <= 2) {
+        return 'black';
+    } else if (square.row >= 7) {
+        return 'white';
+    }
 };
 
-// Example rook piece
-const rook = {
-    type: 'rook',
-    color: 'white',
-    validMoves: [],
-    initialPosition: 'a1',
-    positionHistory: [initialPosition]
+// RANDOM TESTS
+
+// Base piece class
+class PieceGeneral {
+    constructor(square) {
+        this.color = getColor(square);
+        this.validMoves = [];
+        this.startPosition = square.parentNode.id;
+        this.id = this.startPosition;
+        this.positionHistory = [String(this.startPosition)];
+    }
 }
+
+// Specific piece class extending the base
+class Rook extends PieceGeneral {
+    constructor(square) {
+        super(square);
+        this.type = 'rook';
+        this.letterIndicator = 'R';
+    }
+}
+
+class Knight extends PieceGeneral {
+    constructor(square) {
+        super(square);
+        this.type = 'knight';
+        this.letterIndicator = 'N';
+    }
+};
+class Bishop extends PieceGeneral {
+    constructor(square) {
+        super(square);
+        this.type = 'bishop';
+        this.letterIndicator = 'B';
+    }
+};
+class Queen extends PieceGeneral {
+    constructor(square) {
+        super(square);
+        this.type = 'queen';
+        this.letterIndicator = 'Q';
+    }
+};
+class King extends PieceGeneral {
+    constructor(square) {
+        super(square);
+        this.type = 'king';
+        this.letterIndicator = 'K';
+    }
+};
+class Pawn extends PieceGeneral {
+    constructor(square) {
+        super(square);
+        this.type = 'pawn';
+        this.letterIndicator = 'P';
+    }
+};
+

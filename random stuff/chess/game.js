@@ -1,3 +1,7 @@
+const squareTracker = document.getElementById('square-tracker');
+
+
+
 const board = document.querySelector('.board');
 const getColLetter = (col) => String.fromCharCode(96 + col);
 const startState = ['r','n','b','q','k','b','n','r',
@@ -29,12 +33,16 @@ for (let i = 0; i < 64; i++) {
     
     square.addEventListener('click', () => {
         // Log the coordinates for testing
-        console.log('Position:', {
-            col: parseInt(square.dataset.col),
-            row: parseInt(square.dataset.row),
-            id: square.id
-        });
+        squareTracker.textContent = square.id + ` (col: ${col}, row: ${row})`;
     });
+    if (startState[i] !== '') {
+        const piece = document.createElement('div');
+        piece.classList.add('piece');
+        piece.textContent = startState[i];
+        
+        square.appendChild(piece);
+    }
+
     board.appendChild(square);
 }
 
