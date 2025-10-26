@@ -73,7 +73,7 @@ h1 {
 }
 
 #TOTIM-logo img {
-  height: 37px;
+  height: 45px;
 }
 
 .donate-button {
@@ -86,6 +86,7 @@ h1 {
   display: grid;
   justify-content: center;
   align-items: center;
+  font-weight: 550;
 }
 
 .home-container {
@@ -107,18 +108,19 @@ main {
   position: relative;
 }
 
-.splide-arrows{
-  display: flex;
-  justify-content: space-between;
-}
-
 .splide-pagination-page :has(.is-active) {
   background-color: var(--monochrome-2);
 }
 
+.splide__pagination .is-active {
+  background-color: var(--monochrome-2) !important;
+  transform: none !important;
+  transition: background-color 0.3s ease !important;
+}
+
 .splide-arrows-custom {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .splide-arrow-custom {
@@ -130,6 +132,12 @@ main {
   margin: 0 !important;
   font-size: inherit !important;
   color: inherit !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.splide-pagination-custom{
+  position: static !important;
 }
 
 .about {
@@ -169,19 +177,6 @@ h2.section-title {
 .about p {
   margin-bottom: 1rem;
   line-height: 1.8;
-}
-
-.slider {
-  width: 100%;
-  height: fit-content;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.slides-wrapper {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 .splide{
@@ -259,49 +254,50 @@ a.slide:hover {
   opacity: 0.9;
 }
 
-.slider-dots {
+.download-container {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--monochrome-2);
+  border-radius: 1rem;
+  width: fit-content;
+  align-self: center;
+  overflow: hidden;
+  box-shadow: 0 0 10px #0000004b;
+  margin: 3rem 0;
+}
+
+.download-container h3{
+  color: white;
+  background-color: var(--colored-5);
+  padding: 1rem;
+  margin: 0;
+  box-shadow: inset 0 -3px 6px var(--colored-6), 0 0 20px var(--colored-3);
+}
+
+.download-links {
+  display: flex;
+  padding: 1rem;
   justify-content: center;
-  align-items: center;
-  gap: 6px;
-  margin-top: 1rem;
 }
 
-.slider-arrow {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  padding: 0;
-  transition: opacity 0.3s;
+.download-link{
   display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 1;
+  border-right: 1px solid #000;
 }
 
-.slider-arrow:hover {
-  opacity: 0.7;
+.download-link:last-child {
+  border-right: none;
 }
 
-.slider-arrow-right {
-  margin-left: 4px;
-}
 
-.slider-arrow-left {
-  margin-right: 4px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dot.active {
-  background-color: var(--monochrome-5);
-}
 
 footer {
   height: 12vh;
@@ -518,6 +514,38 @@ form textarea {
   line-height: 1.6;
 }
 
+.qr-modal-dialog {
+  width: auto;
+  height: auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#qr-title{
+  margin-top: 2rem;
+}
+
+.qr-code-image {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.qr-code-container p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--monochrome-4);
+}
+
 #signup-form {
   display: flex;
 }
@@ -582,6 +610,10 @@ form textarea {
     padding-left: 0;
   }
 
+  .download-label{
+    display: none;
+  }
+
   .footer-links {
     flex-direction: column;
     height: auto;
@@ -639,6 +671,9 @@ form textarea {
   #signup-form fieldset .form-group {
     grid-template-columns: 0.25fr 3fr;
   }
+  .qr-modal-dialog {
+  max-width: 90vw;
+}
 }
 
 @media (min-width: 1300px) {

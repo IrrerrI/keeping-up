@@ -13,6 +13,10 @@ const signupModal = document.getElementById('signup-modal');
 const signupLink = document.getElementById('signup-link');
 const signupCloseEls = signupModal ? signupModal.querySelectorAll('[data-close]') : [];
 
+const qrModal = document.getElementById('qr-modal');
+const qrLink = document.getElementById('qr-code-link');
+const qrCloseEls = qrModal ? qrModal.querySelectorAll('[data-close]') : [];
+
 function openModal(modalEl) {
   if (!modalEl) return;
   modalEl.classList.add('is-open');
@@ -48,15 +52,24 @@ if (signupLink) {
   });
 }
 
+if (qrLink) {
+  qrLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal(qrModal);
+  });
+}
+
 closeEls.forEach((el) => el.addEventListener('click', () => closeModal(modal)));
 privacyCloseEls.forEach((el) => el.addEventListener('click', () => closeModal(privacyModal)));
 signupCloseEls.forEach((el) => el.addEventListener('click', () => closeModal(signupModal)));
+qrCloseEls.forEach((el) => el.addEventListener('click', () => closeModal(qrModal)));
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeModal(modal);
     closeModal(privacyModal);
     closeModal(signupModal);
+    closeModal(qrModal);
   }
 });
 
