@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOTIM - Photojournalist-driven Narrative Platform</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 id="TOTIM-logo"><img src="assets/TOTIM-logo.png" alt="TOTIM" /></h1>
+      <div class="donate-button">Donate</div>
+    </header>
+
+    <div class="home-container">
+      <main>
+        <section class="about">
+          <div class="about-content-container">
+            <h2 class="section-title">About Us</h2>
+            <p>
+              TOTIM is a photojournalist-driven narrative reporting platform.
+            </p>
+            <p>
+              We equitably license work from the archives of prominent and
+              up-and-coming photojournalists to produce deeply historic and
+              timeless photo-stories that inspire empathy, solidarity and civic
+              engagement.
+            </p>
+            <p>
+              At the heart of TOTIM's mission is the desire to expose and
+              strengthen the connective tissue that binds us as a human
+              community.
+            </p>
+          </div>
+        </section>
+      </main>
+      <section class="splide" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <a
+                href="https://totim.substack.com/p/life-on-the-edge-pt-1-natisha-mallick"
+                class="slide"
+              >
+                <img src="assets/life-on-the-edge.jpg" alt="Life on the Edge" />
+                <div class="slide-info">
+                  <div class="slide-text-container">
+                    <h3>"Life on the Edge" Pt.1</h3>
+                    <p>Natisha Mallick</p>
+                    <p>
+                      <em
+                        ><span style="text-decoration: underline"
+                          >Bengal, India</span
+                        ></em
+                      >
+                    </p>
+                  </div>
+                  <img id="substack-logo" src="assets/substack-logo.png" />
+                </div>
+              </a>
+            </li>
+            <li class="splide__slide">
+              <a
+                href="https://totim.substack.com/p/life-on-the-edge-pt-1-natisha-mallick"
+                class="slide"
+              >
+                <img src="assets/life-on-the-edge.jpg" alt="Life on the Edge" />
+                <div class="slide-info">
+                  <div class="slide-text-container">
+                    <h3>"Life on the Edge" Pt.1</h3>
+                    <p>Natisha Mallick</p>
+                    <p>
+                      <em
+                        ><span style="text-decoration: underline"
+                          >Bengal, India</span
+                        ></em
+                      >
+                    </p>
+                  </div>
+                  <img id="substack-logo" src="assets/substack-logo.png" />
+                </div>
+              </a>
+            </li>
+            <li class="splide__slide">
+              <a
+                href="https://totim.substack.com/p/life-on-the-edge-pt-1-natisha-mallick"
+                class="slide"
+              >
+                <img src="assets/life-on-the-edge.jpg" alt="Life on the Edge" />
+                <div class="slide-info">
+                  <div class="slide-text-container">
+                    <h3>"Life on the Edge" Pt.1</h3>
+                    <p>Natisha Mallick</p>
+                    <p>
+                      <em
+                        ><span style="text-decoration: underline"
+                          >Bengal, India</span
+                        ></em
+                      >
+                    </p>
+                  </div>
+                  <img id="substack-logo" src="assets/substack-logo.png" />
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="splide__arrows splide-arrows-custom">
+            <button class="splide_arrow splide_arrow--prev splide-arrow-custom">
+              <
+            </button>
+            <button class="splide_arrow splide_arrow--next splide-arrow-custom">
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#signup" id="signup-link">Sign Up for Email List</a>
+        <div class="footer-right">
+          <a href="#feedback" id="feedback-link">Feedback</a>
+          <span>|</span>
+          <a href="#privacy" id="privacy-link">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Feedback Modal -->
+    <div
+      class="modal"
+      id="feedback-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="form-title"
+    >
+      <div class="modal__overlay" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Close"
+          data-close
+        >
+          ×
+        </button>
+        <iframe
+          class="modal-iframe"
+          src="https://www.totim.org/feedback"
+          title="TOTIM Feedback"
+          loading="eager"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div
+      class="modal"
+      id="privacy-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="form-title"
+    >
+      <div class="modal__overlay" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Close"
+          data-close
+        >
+          ×
+        </button>
+        <div class="privacy-content">
+          <div class="privacy-header">
+            <h2 id="privacy-title">Privacy Policy</h2>
+            <p>Last updated: 11/14/24</p>
+          </div>
+
+          <h3>Introduction</h3>
+          <p>
+            Totim respects your privacy and is committed to a user experience
+            that protects your personal information. This Privacy Policy
+            outlines our data practices, emphasizing our commitment to not
+            collecting or storing any private user data. By using the Totim app,
+            you acknowledge and accept this Privacy Policy.
+          </p>
+
+          <h3>1. Data Collection Practices</h3>
+          <p>
+            Totim does not collect, store, or share any personal information
+            about its users. The app is designed to operate without the need for
+            personal data collection, ensuring complete privacy and anonymity in
+            usage.
+          </p>
+
+          <h3>2. Usage and Device Data</h3>
+          <p>
+            Totim does not collect or retain any usage data, device data, or
+            identifiers. Any in-app experiences or preferences are stored only
+            locally on your device and are not accessible to us.
+          </p>
+
+          <h3>3. Third-Party Sharing</h3>
+          <p>
+            Totim does not engage in any third-party data sharing, sales, or
+            transfers. No personal or usage information is collected, and thus
+            no information is shared with external entities.
+          </p>
+
+          <h3>4. Cookies and Tracking Technologies</h3>
+          <p>
+            Totim does not use cookies, analytics, or tracking technologies that
+            collect personal or usage data. Your activity within the app is
+            private and is not monitored or recorded by us.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Signup Modal -->
+    <div
+      class="modal"
+      id="signup-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="form-title"
+    >
+      <div class="modal__overlay" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Close"
+          data-close
+        >
+          ×
+        </button>
+        <p class="form-title">Stay up to date with TOTIM</p>
+        <form id="signup-form">
+          <div class="signup-form-wrapper">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                class="one"
+                placeholder="John Doe (Optional)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="one"
+                placeholder="j123@gmail.com (Optional)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Optional"
+              ></textarea>
+            </div>
+          </div>
+          <fieldset>
+            <div class="form-group radio-group">
+              <input
+                type="radio"
+                id="mailing-list"
+                name="query"
+                value="mailing-list"
+              />
+              <label for="mailing-list">Mailing List</label>
+            </div>
+            <div class="form-group radio-group">
+              <input
+                type="radio"
+                id="beta-invite"
+                name="query"
+                value="beta-invite"
+              />
+              <label for="beta-invite">Beta Invite</label>
+            </div>
+            <div class="form-group radio-group">
+              <input
+                type="radio"
+                id="contributor-inquiry"
+                name="query"
+                value="contributor-inquiry"
+              />
+              <label for="contributor-inquiry">Contributor Inquiry</label>
+            </div>
+          </fieldset>
+        </form>
+
+        <button class="submit-button" type="submit">Submit</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide(".splide", {
+          type: "loop",
+          perPage: 1,
+          perMove: 1,
+          autoplay: false,
+        }).mount();
+      });
+    </script>
+  </body>
+</html>
