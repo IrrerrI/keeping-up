@@ -82,16 +82,11 @@ for (let i = 0; i < 64; i++) {
 const showValidMoves = (piece) => {
     // Clear previous highlights
     document.querySelectorAll('.square').forEach(sq => {
-        sq.classList.remove('valid-move');
-    });
-
-    const validMoves = piece.getValidMoves();
-    validMoves.forEach(move => {
-        const square = document.getElementById(move);
-        if (square) {
-            square.classList.add('valid-move');
+        sq.classList.remove('highlighted');
+        if (sq.id ) {
+            sq.classList.add('highlighted');
         }
-    }); 
+    });
 };
 
 // Initial test: show valid moves for the piece at e2 (white pawn)
