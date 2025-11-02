@@ -89,12 +89,6 @@ const showValidMoves = (piece) => {
     });
 };
 
-// Initial test: show valid moves for the piece at e2 (white pawn)
-const initialSquare = document.getElementById('e2');
-if (initialSquare && initialSquare.firstChild && initialSquare.firstChild._pieceObj) {
-    showValidMoves(initialSquare.firstChild._pieceObj);
-}
-
 checkValid = (piece, from, to, board) => {
     if (((to.square.hasPiece === true && to.piece.color !== piece.color)) 
         || (to.square.hasPiece === false)) {

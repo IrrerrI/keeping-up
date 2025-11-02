@@ -1,0 +1,25 @@
+:root{
+    --color: rgb(235, 228, 228);
+    --size: 400px;
+}
+
+body{
+    background-color: var(--color);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.square{
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--color);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 2rem;
+
+    &&:hover{
+        box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.2), inset 5px 10px 10px rgb(255, 255, 255), inset 1px -10px 10px 5px rgba(0,0,0,0.2);
+      
+    }
+}
