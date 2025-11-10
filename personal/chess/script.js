@@ -1,13 +1,8 @@
-// 🎯 CHESS GAME - Easy to understand version with clear variable names and comments
 
-// 📊 GAME STATE - These variables track what's happening in our game
-let currentlySelectedPiece = null;  // Which piece the player clicked on
-let whoseTurnItIs = 'white';        // Whose turn it is to move
-let chessBoard = [];                // 2D array representing the 8x8 board
+let currentlySelectedPiece = null;  
+let whoseTurnItIs = 'white';       
+let chessBoard = [];
 
-// 🏁 STARTING POSITIONS - How pieces are arranged at game start
-// This array represents the board from top-left to bottom-right
-// 'r' = black rook, 'R' = white rook, etc.
 const startingPieceLayout = ['r','n','b','q','k','b','n','r',
                              'p','p','p','p','p','p','p','p',
                              '','','','','','','','',
@@ -696,30 +691,23 @@ function createAndPlacePieceOnSquare(squareElement, pieceCharacter) {
     const pieceColor = getPieceColorFromCharacter(pieceCharacter);
     const piecePosition = squareElement.id;
     
-    let gameLogicPiece;
-    switch (pieceType) {
-        case 'Pawn':
-            gameLogicPiece = new Pawn(pieceColor, piecePosition);
-            break;
-        case 'Rook':
-            gameLogicPiece = new Rook(pieceColor, piecePosition);
-            break;
-        case 'Knight':
-            gameLogicPiece = new Knight(pieceColor, piecePosition);
-            break;
-        case 'Bishop':
-            gameLogicPiece = new Bishop(pieceColor, piecePosition);
-            break;
-        case 'Queen':
-            gameLogicPiece = new Queen(pieceColor, piecePosition);
-            break;
-        case 'King':
-            gameLogicPiece = new King(pieceColor, piecePosition);
-            break;
-        default:
-            console.warn('Unknown piece type:', pieceType);
-            return;
+    // Map piece types to their constructor classes
+    const pieceConstructors = {
+        'Pawn': Pawn,
+        'Rook': Rook,
+        'Knight': Knight,
+        'Bishop': Bishop,
+        'Queen': Queen,
+        'King': King
+    };
+    
+    const PieceClass = pieceConstructors[pieceType];
+    if (!PieceClass) {
+        console.warn('Unknown piece type:', pieceType);
+        return;
     }
+    
+    const gameLogicPiece = new PieceClass(pieceColor, piecePosition);
     
     // 🔗 Connect the visual piece to the game piece
     visualPieceElement._pieceObj = gameLogicPiece;

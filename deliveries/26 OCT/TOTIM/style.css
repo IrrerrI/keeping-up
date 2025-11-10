@@ -39,7 +39,7 @@
 body {
   font-weight: 400;
   font-style: normal;
-  background-color: #FFF0E7;
+  background-color: rgb(255, 255, 255);
   color: var(--monochrome-3);
   font-size: var(--font-large);
   letter-spacing: 0;
@@ -144,8 +144,6 @@ main {
 .about {
   margin-bottom: 2rem;
   direction: rtl;
-  max-height: 335px;
-  overflow: auto;
   padding-left: 22px;
 }
 
@@ -287,7 +285,6 @@ a.slide:hover {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 1;
-  font-size: 24px;
 }
 
 .download-link + .download-link {
