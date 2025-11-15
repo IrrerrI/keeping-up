@@ -1,0 +1,44 @@
+
+body{
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    margin: 0p;
+    background-color: rgb(0, 0, 0);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 0.5rem;
+    height: 99vh;
+
+
+    &:hover > img{
+        filter: brightness(0.5);
+    }
+
+    img{
+        grid-column: span 2;
+        aspect-ratio: 1;
+        background-color: yellow;
+        max-width: 100%;
+        object-fit: cover;
+        clip-path: path('M 58 40 C 78 20 98 20 118 40 C 131.334 53.334 144.666 66.666 158 80 C 178 100 178 120 158 140 L 118 180 C 98 200 78 200 58 180 L 18 140 C -2 120 -2 100 18 80');
+        transition: clip-path 500ms, filter 500ms;
+
+        &:nth-of-type(4){
+            grid-column: 2/ span 2;
+        }
+
+        &:hover{
+            clip-path: path('M 0 20 C 78 20 98 20 173 23 C 173 55 173 59 173 83 C 174 118 173 117 174 200 L 174 200 C 98 200 78 200 0 200 L 0 200 C 0 120 0 97 0 22');
+            filter: brightness(1);
+        }
+    }
+
+
+    }
+
+
