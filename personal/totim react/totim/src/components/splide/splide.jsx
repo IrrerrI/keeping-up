@@ -1,6 +1,5 @@
 import SubstackLogo from '../../assets/substack-logo.png';
 
-
 function CustomSplide (props) {
   return (
     <>
